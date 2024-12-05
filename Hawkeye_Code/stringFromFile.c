@@ -5,6 +5,7 @@
 #define LENGTHMAX 100
 #define NLINES 60
 int lineLength(char inword[]);
+int numTypeLines(int numReadLines, int maxLen, char inmat[][maxLen]);
 int main(){
     FILE* readPTR = fopen(INFILE, "r");
 
@@ -17,11 +18,20 @@ int main(){
                     lineCounter++;
         }
     fclose(readPTR);
+    char types[numTypeLines(lineCounter, LENGTHMAX, lineStore)];
+    int stepthrough = 0;
         for(int i = 0;i <lineCounter; i++){
-            for(int j = 0; j < (lineLength(lineStore[i])-1);j++){
-                printf("%c", lineStore[i][j]);
+            
+            if(lineLength(lineStore[i]) == 2){
+                if(lineStore[i][0] == 'A' | lineStore[i][0] == 'N'| lineStore[i][0] == 'V'){  
+                    types[stepthrough] = lineStore[i][0];
+                    stepthrough++;
+                }
             }
         }
+    for(int i = 0; i<stepthrough;i++){
+        printf("%c", types[i]);
+    }
 return 0;
 }
 
@@ -32,3 +42,10 @@ int lineLength(char inword[]){
     return(counter);
 }
 
+int numTypeLines(int numReadLines, int maxLen, char inmat[][maxLen]){
+    int counter = 0;
+        for(int i = 0;i < numReadLines; i++){
+            if(lineLength(inmat[i]) == 2){counter++;}
+        }
+    return(counter);
+}
