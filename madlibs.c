@@ -7,18 +7,17 @@
 #define MAX_LENGTH 100
 #define MAX_WORDS 50
 
-void wordTypes(FILE *file , char *wordTypes);
-void getInput(char *wordTypes , char input[MAX_WORDS][MAX_LENGTH];
-void create(char *madlib , char *wordTypes , char input[MAX_WORDS][MAX_LENGTH];
-int main();
-
+void getTypes(FILE *file , char *wordTypes);
+void getInput(char *wordTypes , char input[MAX_WORDS][MAX_LENGTH]);
+void create(char *madlib , char *wordTypes , char input[MAX_WORDS][MAX_LENGTH]);
+//int main();
 
 void getWord(FILE *file , char *wordTypes){
 	int i = 0;
 	char ch;
 
 
-	while(fscanf)file , "%c" , &ch) == 1){
+	while(fscanf(file , "%c" , &ch) == 1){
 		if(ch == '\n'){
 			break;
 		}else if(ch != ','){
@@ -28,10 +27,10 @@ void getWord(FILE *file , char *wordTypes){
 		wordTypes[i] = '\0';
 }
 
-void getInput(char *wordTypes , char input[MAX_WORDS][MAX_LENGTH]{
+void getInput(char *wordTypes , char input[MAX_WORDS][MAX_LENGTH]){
 	int i = 0;
 	while(wordTypes[i] != '\0'){
-		if(wordTypes[i] == 'N'{
+		if(wordTypes[i] == 'N'){
 			printf("Enter a noun: ");
 		}else if(wordTypes[i] == 'A'){
 			printf("Enter an adjective: ");
@@ -43,20 +42,20 @@ void getInput(char *wordTypes , char input[MAX_WORDS][MAX_LENGTH]{
 	}
 }
 
-void create(char *madlib , char *wordTypes , char input[MAX_WORDS][MAX_LENGTHS]){
+void create(char *madlib , char *wordTypes , char input[MAX_WORDS][MAX_LENGTH]){
 	int i = 0;
 	int j = 0;
-	char filledMadlib[MAX_LENGTH * 2] = ' ';
+	char filledMadlib[MAX_LENGTH * 2] = " ";
 	int filledIndex = 0;
 	
 	
 	while(madlib[i] != '\0'){
-		if(madlib[i] == 'A' || madlib[i] == 'N' || madlib[i] == 'V'{
+		if(madlib[i] == 'A' || madlib[i] == 'N' || madlib[i] == 'V'){
 		while(wordTypes[j] != '\0' && wordTypes[j] != madlib[i]){
-		j++
+		j++;
 	}
-	int k = 0 
-	while(input[j][k] != '\0';
+	int k = 0;
+	while(input[j][k] != '\0'){
 		filledMadlib[filledIndex++] = input[j][k++];
 		}
 	}else{
@@ -65,24 +64,40 @@ void create(char *madlib , char *wordTypes , char input[MAX_WORDS][MAX_LENGTHS])
 		i++;
 }
 
-	filledMadlib[filledIndex] = '\0';
+	//filledMadlib[filledIndex] = '\0';
 	//printf("   ?    ");
 
-
+}
 
 
 int main(){
 
+	char wordTypesArray;
 
-	FILE *file = fopen("wordtypes.txt" , "r");
+	FILE *file = fopen("madlib.1.txt" , "r");
 		if(file == NULL){
-			printf("NOPE\n");
-		return;
+			printf("NOPE!\n");
+		return 0;
 		}
 		
-	getWord(file , wordTypes);
+		//char wordTypesArray[MAX_LENGTH];
+		char getInput[MAX_WORDS][MAX_LENGTH];
+		
+	void getTypes(FILE *file , char *wordTypesArray);
 	fclose(file);
 
 	return 0;
 }
+
+
+//15 and 82
+
+
+
+
+
+
+
+
+
 
