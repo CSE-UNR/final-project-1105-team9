@@ -1,21 +1,51 @@
 #define INFILE "madlib1.txt"
-#define LENGTHMAX 100
 #define NLINES 60
+#define MAX_LENGTH 100
+#define MAX_WORDS 50
 int lineLength(char inword[]);
 int numTypeLines(int numReadLines, int maxLen, char inmat[][maxLen]);
+void gettwodarray(char types[]);
+void getTypes(FILE *file , char *wordTypes);
+void getInput(char *wordTypes , char input[MAX_WORDS][MAX_LENGTH]);
+void create(char *madlib , char *wordTypes , char input[MAX_WORDS][MAX_LENGTH]);
+
+int main(){
+
+
+
+
+
+
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////
 int main(){
     FILE* readPTR = fopen(INFILE, "r");
 
     if(readPTR == NULL){printf("File didn't open\n"); return 0;}else{printf("opened!\n");}
         int lineCounter = 0;        
-        char lineStore[NLINES][LENGTHMAX];
+        char lineStore[NLINES][MAX_LENGTH];
         for(int lineIndex = 0; lineIndex < NLINES; ++lineIndex){
                 fgets(lineStore[lineIndex], 100, readPTR);
                 if(*lineStore[lineIndex] == '\0'){break;}
                     lineCounter++;
         }
     fclose(readPTR);
-    char types[numTypeLines(lineCounter, LENGTHMAX, lineStore)];
+    char types[numTypeLines(lineCounter, MAX_LENGTH, lineStore)];
     int stepthrough = 0;
         for(int i = 0;i <lineCounter; i++){
             
@@ -84,12 +114,7 @@ void gettwodarray(){
 
 
 
-#define MAX_LENGTH 100
-#define MAX_WORDS 50
 
-void getTypes(FILE *file , char *wordTypes);
-void getInput(char *wordTypes , char input[MAX_WORDS][MAX_LENGTH]);
-void create(char *madlib , char *wordTypes , char input[MAX_WORDS][MAX_LENGTH]);
 //int main();
 
 void getWord(FILE *file , char *wordTypes){
