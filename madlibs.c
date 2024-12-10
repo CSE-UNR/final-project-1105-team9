@@ -4,7 +4,6 @@
 
 
 #define MAX_LENGTH 100
-#define MAX_WORDS 50
 
 
 void getTypes(FILE *file , char *wordTypes);
