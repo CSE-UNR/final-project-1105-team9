@@ -49,15 +49,15 @@ int main(){
 	
 	char ch;
 	int counter = 0;
-	
+	for(int i=0 ; i < lineCounter ; i++){
 	while(fscanf(fp , "%c" , &ch) == 1){
 		if(ch == '\n'){
 		
 	printf("%s" , twodarray[counter]);
 	
 	counter++;
-}
-		
+		}
+	}	
 	printf("%c" , ch);
 }
 		
