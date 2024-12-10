@@ -50,10 +50,17 @@ int main(){
 	char ch;
 	int counter = 0;
 	for(int i=0 ; i < lineCounter ; i++){
-	
-		for(int j = 0 ; lineStore[i][j] != '\0' ; j++){
-			fscanf(fp , "%c" , &ch);
+		if(lineLength(lineStore[i]) == 2){
+               		if(lineStore[i][0] == 'A' | lineStore[i][0] == 'N'| lineStore[i][0] == 'V'){
+		       		printf("%s",twodarray[counter]);
+				counter++;
+               	}
+           }else{
+		printf("%s", lineStore[i]);
 		}
+	}
+			
+		
 		
 	{
 		if(ch == '\n'){
