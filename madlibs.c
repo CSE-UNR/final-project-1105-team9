@@ -14,6 +14,9 @@ void getInput(char *wordTypes);
 
 int main(){
 
+	char twodarray[10][50];
+	
+	
 	FILE *fp = fopen("madlib1.txt" , "r");
 	if(fp == NULL){
 		printf("NOPE\n");
@@ -22,11 +25,15 @@ int main(){
 
 	
 	char ch;
+	int counter = 0;
 	
 	while(fscanf(fp , "%c" , &ch) == 1){
 		if(ch == '\n'){
-			break;
-		}
+		
+	printf("%s" , twodarray[counter]);
+	
+	counter++;
+}
 		
 	printf("%c" , ch);
 }
@@ -36,9 +43,7 @@ int main(){
 
 	return 0;
 }
-	
-	
-	
+
 	
 	
 	
