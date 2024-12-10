@@ -34,6 +34,7 @@ int main(){
     }
 
 	//Calling 2darray
+	int typeCount;
 	gettwodarray(types, typeCount);
 
 	FILE *fp = fopen("madlib1.txt" , "r");
