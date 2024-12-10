@@ -61,7 +61,6 @@ int main(){
 	printf("%c" , ch);
 }
 		
-	//void getTypes(FILE *fp , char *wordTypesArray);
 	fclose(fp);
 
 	return 0;
