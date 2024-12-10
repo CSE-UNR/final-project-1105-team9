@@ -4,12 +4,13 @@
 int lineLength(char inword[]);
 int numTypeLines(int numReadLines, int maxLen, char inmat[][maxLen]);
 void gettwodarray(char types[]);
-void getTypes(FILE *file , char *wordTypes);
-void getInput(char *wordTypes , char input[MAX_WORDS][MAX_LENGTH]);
+void getTypes(FILE *fp);
+void getInput(char *wordTypes);
 //void create(char *madlib , char *wordTypes , char input[MAX_WORDS][MAX_LENGTH]);
 
 int main(){
-FILE *fp = fopen("madlib1.txt" , "r");
+
+	FILE *fp = fopen("madlib1.txt" , "r");
 	if(fp == NULL){
 		printf("NOPE\n");
 		return 0;
@@ -31,7 +32,6 @@ FILE *fp = fopen("madlib1.txt" , "r");
 
 	return 0;
 }
-
 
 
 
