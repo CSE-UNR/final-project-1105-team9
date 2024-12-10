@@ -3,11 +3,12 @@
 #define INFILE "madlib1.txt"
 #define NLINES 60
 #define MAX_LENGTH 100
+#define WORD_LENGTH 100
 int lineLength(char inword[]);
 int numTypeLines(int numReadLines, int maxLen, char inmat[][maxLen]);
 int fillStoreReturnLines(int maxLen, char lineStore[][maxLen], FILE* readPTR );
 void getLineTypes(int maxLen,char lineStore[][maxLen],char types[], int lineCounter);
-void gettwodarray(char types[]);
+void gettwodarray(char types[], int typeCount);
 void getTypes(FILE *fp);
 void getInput(char *wordTypes);
 //void create(char *madlib , char *wordTypes , char input[MAX_WORDS][MAX_LENGTH]);
@@ -32,6 +33,8 @@ int main(){
         printf("%c", types[i]);
     }
 
+	//Calling 2darray
+	gettwodarray(types, typeCount);
 
 	FILE *fp = fopen("madlib1.txt" , "r");
 	if(fp == NULL){
@@ -101,8 +104,28 @@ int numTypeLines(int numReadLines, int maxLen, char inmat[][maxLen]){
 
     return(counter);
 }
-
-
+//2darray function
+void gettwodarray(char types[], int typeCount){
+	char twodarray[typeCount][WORD_LENGTH];
+	for(int i = 0; i < typeCount; i++){
+		char wordType = types[i];
+		switch(wordType){
+			case 'A': 
+				printf("Please enter an adjective: ");
+				break;
+			case 'N':
+				printf("Please enter an noun: ");
+				break;
+			case 'V':
+				printf("Please enter an verb: ");
+				break;
+			default : 
+				printf("Swith error");
+				break;
+		}
+		scanf("%s", twodarray[i]);
+	}
+}
 
 
 
