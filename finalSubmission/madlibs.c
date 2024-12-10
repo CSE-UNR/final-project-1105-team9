@@ -52,7 +52,7 @@ int main(){
 	for(int i=0 ; i < lineCounter ; i++){
 	
 		for(int j = 0 ; lineStore[i][j] != '\0' ; j++){
-			fscanf(fp , "%c" , &ch)
+			fscanf(fp , "%c" , &ch);
 		}
 		
 	{
