@@ -6,8 +6,8 @@
 #define MAX_LENGTH 100
 
 
-void getTypes(FILE *file , char *wordTypes);
-void getInput(char *wordTypes , char input[MAX_WORDS][MAX_LENGTH]);
+void getTypes(FILE *fp);
+void getInput(char *wordTypes);
 
 
 
