@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #define INFILE "madlib1.txt"
 #define NLINES 60
 #define MAX_LENGTH 100
