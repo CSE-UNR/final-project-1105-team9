@@ -59,7 +59,7 @@ int main(){
 	}
 	
 	fclose(fp);
-
+		printf("\n");
 	return 0;
 }
 
