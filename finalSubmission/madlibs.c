@@ -52,7 +52,7 @@ int main(){
 	for(int i=0 ; i < lineCounter ; i++){
 		if(lineLength(lineStore[i]) == 2){
                		if(lineStore[i][0] == 'A' | lineStore[i][0] == 'N'| lineStore[i][0] == 'V'){
-		       		printf("%s",twodarray[counter]);
+		       		printf(" %s ",twodarray[counter]);
 				counter++;
                	}
            }else{
