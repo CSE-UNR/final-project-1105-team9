@@ -19,8 +19,6 @@ int main(){
     if(readPTR == NULL){
         printf("File didn't open\n"); 
         return 0;
-    }else{
-        printf("opened!\n");
     }
 
     char lineStore[NLINES][MAX_LENGTH];
@@ -28,11 +26,8 @@ int main(){
     char types[numTypeLines(lineCounter, MAX_LENGTH, lineStore)];
     getLineTypes(MAX_LENGTH, lineStore, types, lineCounter);
     fclose(readPTR);
-    printf("%d", lineLength(types));
-    for(int i = 0;i<lineLength(types);i++){
-        printf("%c", types[i]);
-    }
-
+    
+    
 	//Calling 2darray
 	int typeCount;
 	char twodarray[NLINES][MAX_LENGTH];
@@ -62,17 +57,7 @@ int main(){
 			}
 		}
 	}
-			
-		
-		
-	{
-			
-	counter++;
-		
-	}	
-	printf("%c" , ch);
-
-		
+	
 	fclose(fp);
 
 	return 0;
