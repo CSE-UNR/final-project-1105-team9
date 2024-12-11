@@ -1,9 +1,9 @@
 #include <stdio.h>
-
-#define INFILE "madlib1.txt"
+#define INFILE "madlib2.txt"
 #define NLINES 60
 #define MAX_LENGTH 100
 #define WORD_LENGTH 100
+
 int lineLength(char inword[]);
 int numTypeLines(int numReadLines, int maxLen, char inmat[][maxLen]);
 int fillStoreReturnLines(int maxLen, char lineStore[][maxLen], FILE* readPTR );
@@ -35,7 +35,7 @@ int main(){
 
 	
 	
-	FILE *fp = fopen("madlib1.txt" , "r");
+	FILE *fp = fopen(INFILE, "r");
 	if(fp == NULL){
 		printf("NOPE\n");
 		return 0;
