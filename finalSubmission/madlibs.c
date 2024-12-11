@@ -63,15 +63,14 @@ int main(){
 		
 		
 	{
-		if(ch == '\n'){
 		
 	printf("%s" , twodarray[counter]);
 	
 	counter++;
-		}
+		
 	}	
 	printf("%c" , ch);
-}
+
 		
 	fclose(fp);
 
