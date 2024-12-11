@@ -56,7 +56,7 @@ int main(){
 				counter++;
                	}
            }else{
-			for(int j = 0 ; j < lineLength(lineStore[i]) ; j++){
+			for(int j = 0 ; j < lineLength(lineStore[i])-1 ; j++){
 				printf("%c" , lineStore[i][j]);
 				
 			}
