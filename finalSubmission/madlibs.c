@@ -56,16 +56,17 @@ int main(){
 				counter++;
                	}
            }else{
-		printf("%s", lineStore[i]);
+			for(int j = 0 ; lineStore[i][j] != '\0' ; j++){
+				printf("%c" , lineStore[i][j]);
+				
+			}
 		}
 	}
 			
 		
 		
 	{
-		
-	printf("%s" , twodarray[counter]);
-	
+			
 	counter++;
 		
 	}	
