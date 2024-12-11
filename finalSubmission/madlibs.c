@@ -8,7 +8,7 @@ int lineLength(char inword[]);
 int numTypeLines(int numReadLines, int maxLen, char inmat[][maxLen]);
 int fillStoreReturnLines(int maxLen, char lineStore[][maxLen], FILE* readPTR );
 void getLineTypes(int maxLen,char lineStore[][maxLen],char types[], int lineCounter);
-void gettwodarray(char types[], int typeCount);
+void gettwodarray(int maxlength, char types[], int typeCount, char twodarray[][maxlength]);
 void getTypes(FILE *fp);
 void getInput(char *wordTypes);
 //void create(char *madlib , char *wordTypes , char input[MAX_WORDS][MAX_LENGTH]);
@@ -35,9 +35,9 @@ int main(){
 
 	//Calling 2darray
 	int typeCount;
-	gettwodarray(types, typeCount);
+	char twodarray[NLINES][MAX_LENGTH];
+	gettwodarray(MAX_LENGTH, types, lineLength(types), twodarray);
 
-	char twodarray[10][50];
 	
 	
 	FILE *fp = fopen("madlib1.txt" , "r");
@@ -123,8 +123,7 @@ int numTypeLines(int numReadLines, int maxLen, char inmat[][maxLen]){
     return(counter);
 }
 //2darray function
-void gettwodarray(char types[], int typeCount){
-	char twodarray[typeCount][WORD_LENGTH];
+void gettwodarray(int maxlength, char types[], int typeCount, char twodarray[][maxlength]){
 	for(int i = 0; i < typeCount; i++){
 		char wordType = types[i];
 		switch(wordType){
@@ -144,6 +143,7 @@ void gettwodarray(char types[], int typeCount){
 		scanf("%s", twodarray[i]);
 	}
 }
+
 
 
 
